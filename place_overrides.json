@@ -1,0 +1,27 @@
+// Place override list
+// Some places are handled incorrectly by Twitter's API
+// This file can be used to override them.
+
+{
+    // Don't attempt to geocode any place with a full_name matching
+    // these entries.
+    "disable": [
+        // This is a place that later got removed. We can't geocode it.
+        "[Place name removed]",
+        // Don't geocode DC, we're removing it
+        "Washington, DC",
+        "District of Columbia, USA",
+        // This tunnel is exactly between NY and NJ.
+        "Lincoln Tunnel",
+        // This statistical area crosses two states
+        "PROVIDENCE-NEW BEDFORD",
+    ],
+    // Geocoding has trouble with these places, but their meaning is
+    // unambiguous.
+    "remap": {
+        "Washington Heights, Manhattan": "NY",
+        "PHILADELPHIA": "PA",
+        "LOS ANGELES": "CA",
+        "NEW YORK": "NY",
+    },
+}
